@@ -9,7 +9,8 @@ ChoosePic::ChoosePic(QWidget* parent, const char* name, bool modal, WFlags fl)
         : ChoosePicBase(parent, name, modal, fl)
 {
 #ifdef DESKTOP
-    QDir d(QString(IQNOTES_PICDIR) + "/iqnotes/items");
+    //QDir d(QString(IQNOTES_PICDIR) + "/iqnotes/items");
+    QDir d(QDir(QString(IQNOTES_PICDIR) + "/iqnotes/items").absPath());
 #else
     QDir d(QString("/opt/QtPalmtop/pics") + "/iqnotes/items");
 #endif
@@ -40,17 +41,17 @@ void ChoosePic::setCurrentPic(const QString &cp)
 {
 #if 0
     if (PicsList->count() <= 1)
-	return;
+    return;
  
     int i = 1;
     for(QStringList::Iterator it = picNames.begin(); it != picNames.end(); ++it )
     {
-	if (*it == cp) 
-	{
-	    PicsList->setSelected(i, true);
-	    break;
-	}
-	i++;
+    if (*it == cp) 
+    {
+        PicsList->setSelected(i, true);
+        break;
+    }
+    i++;
     }
 
 #endif
