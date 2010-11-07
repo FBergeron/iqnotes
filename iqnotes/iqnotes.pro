@@ -1,6 +1,7 @@
 TEMPLATE = app
 #CONFIG = qt warn_on pda
-CONFIG = qt warn_on debug desktop
+#CONFIG = qt warn_on debug console desktop
+CONFIG = qt warn_on desktop
 DEFINES = TOOLBAR_BIG_ICONS
 pda:INCLUDEPATH += $(QPEDIR)/include
 DESTDIR = ../bin
@@ -62,10 +63,11 @@ DISTFILES += AUTHORS \
              TODO \
              ChangeLog \
              make_arm 
-desktop:DEFINES = IQNOTES_PICDIR="\"/usr/share/iqnotes\""
-desktop:INTERFACES = desktop/ui/*.ui
-desktop:HEADERS += desktop/qpe/*.h
-desktop:SOURCES += desktop/qpe/*.cpp
+desktop:DEFINES = IQNOTES_PICDIR="\"./pics\""
+# I have no idea why but I must hardcode the absolute path for the 3 following lines.
+desktop:INTERFACES = p:\fred\iqnotes-2.1.0rc1\iqnotes\desktop\ui\*.ui
+desktop:HEADERS += p:\fred\iqnotes-2.1.0rc1\iqnotes\desktop\qpe\*.h
+desktop:SOURCES += p:\fred\iqnotes-2.1.0rc1\iqnotes\desktop\qpe\*.cpp
 desktop:DEFINES += DESKTOP
 desktop:INCLUDEPATH = desktop desktop/ui
 desktop:DEPENDPATH = desktop desktop/ui
