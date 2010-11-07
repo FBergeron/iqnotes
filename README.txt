@@ -1,8 +1,10 @@
-I tried to port the iqnotes application to qt-4.  I have a branch for this.  But it requires too much work, I think.
+This is a fork of the old iqnotes application that was (is?) available on the Zaurus.  Someone asked me to build the application on Windows so here is what I did after retrieving the original source code.
 
-I also tried to compile the latest version of Q... using cygwin so that I can just compile the iqnotes's code as is using Qt-3 but it didn't work. 
+First, I tried to port the iqnotes application to qt-4.  But I realized quickly that it would require too much work.
 
-I'm now trying to use an old binary of Qt-3 (qt-win-free-mingw-3.3.4 to be more precise) to compile the iqnotes application.  It gives some errors for now.  I have a branch for that too.
+Then, I tried to compile the latest version of Q... using cygwin so that I can just compile the iqnotes's code, as is, using Qt-3.  Unfortunately, it didn't work.
+
+Finally, I have used an old binary of Qt-3 (qt-win-free-mingw-3.3.4 to be more precise that I have found on the SourceForge's qtwin project (http://sourceforge.net/projects/qtwin/) and it worked.
 
 What to do to build the application:
 
