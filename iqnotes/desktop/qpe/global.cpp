@@ -20,14 +20,14 @@
 
 QString Global::applicationFileName(const QString& appname, const QString& filename)
 {
-	QString homeDir = QDir::homeDirPath();
+    QString homeDir = QDir::currentDirPath();
 #ifdef DESKTOP
-	qDebug("Home dir: %s", homeDir.latin1());
+    qDebug("Home dir: %s", homeDir.latin1());
 #endif
 
-	if (!QDir().exists(homeDir + "/.iqnotes"))
-	{
-		QDir().mkdir(homeDir + "/.iqnotes");
-	}
-	return homeDir + "/.iqnotes/" + filename;
+    if (!QDir().exists(homeDir + "/.iqnotes"))
+    {
+        QDir().mkdir(homeDir + "/.iqnotes");
+    }
+    return homeDir + "/.iqnotes/" + filename;
 }
